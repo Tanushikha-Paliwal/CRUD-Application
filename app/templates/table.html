@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    {% for t in data %}
+    <td>{{t.name}}</td>
+    <td>{{t.email}}</td>
+    <td><a href ="/update_view/{{t.id}}/" class="btn btn-primary" type="submit">Update</a>
+      <a href ="{% url 'delete_user' t.pk %}" class="btn btn-primary" type="submit">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+
+  
+
+</table>
+
+</body>
+</html>
+

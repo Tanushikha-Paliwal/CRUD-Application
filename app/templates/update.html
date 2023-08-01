@@ -1,0 +1,21 @@
+
+<form action="/update/" method="post">
+    {% csrf_token %}
+    <div class="container">
+      <h1>Update</h1>
+      <p>Please fill in this form to update an account.</p>
+      <hr>
+  
+     <input type="hidden" name="uid" value="{{data.id}}">
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter name" name="name" id="name" value="{{data.name}}" required>
+      
+  
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter email" name="email" id="email" value="{{data.email}}" required>
+  
+     
+      <hr>
+     
+      <button type="submit" class="Update_form_data">Update</button>
